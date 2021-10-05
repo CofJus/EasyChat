@@ -1,0 +1,11 @@
+package com.cofjus.chat.operation.base;
+
+import com.cofjus.chat.message.base.MessageBody;
+
+/**
+ * @Author Rui
+ * @Date 2021/10/5 10:01
+ * @Version 1.0
+ */
+public abstract class OperationResult extends MessageBody {
+}
