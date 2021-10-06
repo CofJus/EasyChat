@@ -3,6 +3,7 @@ package com.cofjus.chat.protocol.req;
 import com.cofjus.chat.protocol.Message;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import static com.cofjus.chat.constant.Command.MESSAGE_REQUEST;
 
@@ -12,11 +13,17 @@ import static com.cofjus.chat.constant.Command.MESSAGE_REQUEST;
  * @Version 1.0
  */
 @EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
 @Data
 public class MessageRequest extends Message {
 
     private String to;
     private String message;
+
+    public MessageRequest(String to, String message) {
+        this.to = to;
+        this.message = message;
+    }
 
     @Override
     public Byte getCommand() {

@@ -5,7 +5,7 @@ import com.cofjus.chat.protocol.req.LoginRequest;
 import com.cofjus.chat.protocol.req.MessageRequest;
 import com.cofjus.chat.protocol.res.LoginResponse;
 import com.cofjus.chat.protocol.res.MessageResponse;
-import com.cofjus.chat.serialize.Serializer;
+import com.cofjus.chat.serialize.*;
 import com.cofjus.chat.serialize.impl.JsonSerializer;
 import io.netty.buffer.ByteBuf;
 

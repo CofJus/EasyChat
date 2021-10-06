@@ -23,7 +23,6 @@ public class FrameDecoder extends LengthFieldBasedFrameDecoder {
             ctx.channel().close();
             return null;
         }
-
         return super.decode(ctx, in);
     }
 }

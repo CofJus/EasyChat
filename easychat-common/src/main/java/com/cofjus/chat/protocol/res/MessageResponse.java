@@ -4,6 +4,8 @@ import com.cofjus.chat.protocol.Message;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import static com.cofjus.chat.constant.Command.MESSAGE_RESPONSE;
+
 /**
  * @Author Rui
  * @Date 2021/10/6 15:58
@@ -19,6 +21,6 @@ public class MessageResponse extends Message {
 
     @Override
     public Byte getCommand() {
-        return null;
+        return MESSAGE_RESPONSE;
     }
 }

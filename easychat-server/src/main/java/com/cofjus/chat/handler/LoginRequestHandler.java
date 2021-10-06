@@ -1,7 +1,6 @@
 package com.cofjus.chat.handler;
 
 import com.cofjus.chat.protocol.req.LoginRequest;
-import com.cofjus.chat.protocol.req.MessageRequest;
 import com.cofjus.chat.protocol.res.LoginResponse;
 import com.cofjus.chat.session.Session;
 import com.cofjus.chat.utils.SessionUtil;
@@ -43,5 +42,10 @@ public class LoginRequestHandler extends SimpleChannelInboundHandler<LoginReques
 
     private boolean isValid(LoginResponse loginResponse) {
         return true;
+    }
+
+    @Override
+    public void channelInactive(ChannelHandlerContext ctx) {
+        SessionUtil.unBindSession(ctx.channel());
     }
 }

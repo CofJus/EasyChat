@@ -1,7 +1,7 @@
 package com.cofjus.chat.serialize.impl;
 
 import com.alibaba.fastjson.JSON;
-import com.cofjus.chat.serialize.Serializer;
+import com.cofjus.chat.serialize.*;
 import com.cofjus.chat.constant.SerializeAlgorithm;
 /**
  * @Author Rui

@@ -1,7 +1,5 @@
 package com.cofjus.chat.constant;
 
-import lombok.Value;
-
 /**
  * @Author Rui
  * @Date 2021/10/6 13:59
