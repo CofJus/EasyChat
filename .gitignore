@@ -1,2 +1,4 @@
 # Project exclude paths
-/easychat-server/target/
+*/target/
+/.idea
+*.iml
