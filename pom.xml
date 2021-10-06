@@ -4,10 +4,20 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.learning.netty</groupId>
-    <artifactId>netty-research</artifactId>
+    <groupId>org.example</groupId>
+    <artifactId>EasyChat</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>easychat-server</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <log4j.version>2.5</log4j.version>
+        <fastjson.version>1.2.29</fastjson.version>
+    </properties>
     <build>
         <plugins>
             <plugin>
@@ -21,37 +31,7 @@
             </plugin>
         </plugins>
     </build>
-    <modules>
-        <module>easychat-core</module>
-        <module>easychat-api</module>
-        <module>easychat-server</module>
-        <module>easychat-client</module>
-        <module>easychat-common</module>
-    </modules>
-
-    <properties>
-        <log4j.version>2.5</log4j.version>
-    </properties>
-
     <dependencies>
-        <!-- SpringBoot -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.3.1.RELEASE</version>
-        </dependency>
-
-        <!-- log4j2 -->
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-            <version>${log4j.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>${log4j.version}</version>
-        </dependency>
 
         <!-- Netty -->
         <dependency>
@@ -59,6 +39,15 @@
             <artifactId>netty-all</artifactId>
             <version>4.1.68.Final</version>
         </dependency>
+
+        <!-- fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+
+        <!-- lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
