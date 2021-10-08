@@ -14,7 +14,7 @@
             VALUE (#{userId}, #{userName}, #{password}, #{createTime}, #{updateTime})
     </insert>
 
-    <select id="findUserByUserId" parameterType="String">
+    <select id="findUserByUserId" parameterType="Long">
         SELECT * FROM user WHERE user_id = #{id}
     </select>
 </mapper>

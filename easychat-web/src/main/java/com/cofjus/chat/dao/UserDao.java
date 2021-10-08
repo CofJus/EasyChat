@@ -24,6 +24,6 @@ public interface UserDao {
      * @param userId userId
      * @return user
      */
-    User findUserByUserId(String userId);
+    User findUserByUserId(Long userId);
 
 }

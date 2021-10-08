@@ -8,6 +8,6 @@ import io.netty.util.AttributeKey;
  * @Date 2021/10/6 15:43
  * @Version 1.0
  */
-public class Attribute {
+public class   Attribute {
     public static AttributeKey<Session> session = AttributeKey.newInstance("session");
 }

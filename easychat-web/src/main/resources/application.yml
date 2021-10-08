@@ -39,3 +39,9 @@ spring:
         login-username: admin
         login-password: admin
         allow: 127.0.0.1
+  redis:
+    host: 121.199.8.136
+    password: ${MYSQL_PWD}
+    jedis:
+      pool:
+        max-idle: 8
