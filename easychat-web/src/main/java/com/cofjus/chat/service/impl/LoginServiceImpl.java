@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Objects;
 
-import static com.cofjus.chat.constant.Constant.*;
+import static com.cofjus.chat.constant.UserConstant.*;
 
 /**
  * @Author Rui

@@ -4,18 +4,15 @@ import com.cofjus.chat.model.Result;
 import com.cofjus.chat.model.User;
 import com.cofjus.chat.request.LoginRequest;
 import com.cofjus.chat.response.LoginResponse;
+import com.cofjus.chat.response.LogoutResponse;
 import com.cofjus.chat.service.LoginService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.DispatcherServlet;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import java.util.Objects;
-
-import static com.cofjus.chat.constant.Constant.SUCCESS;
+import static com.cofjus.chat.constant.UserConstant.*;
 
 /**
  * @Author Rui
@@ -28,13 +25,10 @@ import static com.cofjus.chat.constant.Constant.SUCCESS;
 public class LoginController {
 
     @Autowired
-    private HttpServletRequest request;
-
-    @Autowired
     private LoginService loginService;
 
     @PostMapping("/login")
-    public Result<LoginResponse> login(@RequestBody LoginRequest loginRequest) {
+    public Result<LoginResponse> login(HttpSession session, @RequestBody LoginRequest loginRequest) {
         Long userId = loginRequest.getUserId();
         String username = loginRequest.getUserName();
         String password = loginRequest.getPassword();
@@ -42,7 +36,6 @@ public class LoginController {
         String msg = loginService.check(user);
         LoginResponse loginResponse = new LoginResponse(loginRequest);
         if(SUCCESS.equals(msg)) {
-            HttpSession session = request.getSession();
             session.setAttribute("userId", loginRequest.getUserId());
             String sessionId = session.getId();
             log.info("sessionId: " + sessionId);
@@ -56,8 +49,23 @@ public class LoginController {
         }
     }
 
-    @GetMapping("/logout/{userId}")
-    public void logout() {
-        System.out.println("LOGOUT SUCCESS");
+    @GetMapping("/logout")
+    public Result<LogoutResponse> logout(HttpSession session) {
+        Object o = session.getAttribute("userId");
+        LogoutResponse logoutResponse = new LogoutResponse();
+        String id = session.getId();
+        // 已登录
+        if(o != null) {
+            logoutResponse.setSuccess(true);
+            logoutResponse.setUserId(Long.parseLong(o.toString()));
+            System.out.println("session-userId" + o.toString());
+            session.removeAttribute("userId");
+            System.out.println("LOGOUT SUCCESS");
+            return Result.success(LOG_OUT, logoutResponse);
+        }
+        // 未登录
+        else {
+            return Result.error(NOT_LOG_IN);
+        }
     }
 }
