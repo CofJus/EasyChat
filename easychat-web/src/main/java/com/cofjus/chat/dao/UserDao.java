@@ -4,6 +4,8 @@ import com.cofjus.chat.model.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * @Author Rui
  * @Date 2021/10/7 15:08

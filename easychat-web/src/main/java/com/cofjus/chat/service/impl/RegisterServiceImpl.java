@@ -30,6 +30,7 @@ public class RegisterServiceImpl implements RegisterService {
 
     @Override
     public User createUser(String username, String password) {
+        // TODO 防止ID重复 待解决
         Long randomId = null;
         do {
             randomId = IDUtil.randomId();
@@ -41,6 +42,7 @@ public class RegisterServiceImpl implements RegisterService {
     }
 
     private Boolean userExists(Long userId) {
-        return null != userDao.findUserByUserId(userId);
+        User user = userDao.findUserByUserId(userId);
+        return null != user;
     }
 }

@@ -18,6 +18,12 @@
 
     <dependencies>
 
+        <!-- Spring-Session -->
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-data-redis</artifactId>
+        </dependency>
+
         <!--Redis-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

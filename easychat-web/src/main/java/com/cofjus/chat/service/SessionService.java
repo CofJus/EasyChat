@@ -1,5 +1,7 @@
 package com.cofjus.chat.service;
 
+import javax.servlet.http.HttpSession;
+
 /**
  * @Author Rui
  * @Date 2021/10/8 10:41
@@ -7,5 +9,6 @@ package com.cofjus.chat.service;
  */
 public interface SessionService {
 
-    Boolean hasLogin(Long id);
+    void addSession();
+
 }

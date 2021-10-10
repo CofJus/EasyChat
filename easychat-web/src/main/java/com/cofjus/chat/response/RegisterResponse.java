@@ -1,7 +1,8 @@
 package com.cofjus.chat.response;
 
-import com.cofjus.chat.request.RegisterRequest;
+import com.cofjus.chat.model.User;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
@@ -20,8 +21,8 @@ public class RegisterResponse {
         this.userName = userName;
     }
 
-    public RegisterResponse(RegisterRequest request) {
-        this.userId = request.getUserId();
-        this.userName = request.getUserName();
+    public RegisterResponse(User user) {
+        this.userId = user.getUserId();
+        this.userName = user.getUserName();
     }
 }

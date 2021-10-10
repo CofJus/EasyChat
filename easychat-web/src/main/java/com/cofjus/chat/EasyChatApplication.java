@@ -12,7 +12,7 @@ import org.mybatis.spring.annotation.MapperScan;
  */
 @SpringBootApplication
 @MapperScan("com.cofjus.chat.dao")
-@ComponentScan({"com.cofjus.chat.dao", "com.cofjus.chat.controller", "com.cofjus.chat.service"})
+@ComponentScan({"com.cofjus.chat.interceptor", "com.cofjus.chat.dao", "com.cofjus.chat.controller", "com.cofjus.chat.service"})
 public class EasyChatApplication {
     public static void main(String... args) {
         SpringApplication.run(EasyChatApplication.class);

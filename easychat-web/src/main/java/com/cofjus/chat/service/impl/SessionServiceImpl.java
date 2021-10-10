@@ -17,7 +17,7 @@ public class SessionServiceImpl implements SessionService {
     private RedisDao redisDao;
 
     @Override
-    public Boolean hasLogin(Long id) {
-        return redisDao.hasKey(id.toString());
+    public void addSession() {
+
     }
 }

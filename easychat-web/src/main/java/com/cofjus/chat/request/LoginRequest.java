@@ -1,6 +1,7 @@
 package com.cofjus.chat.request;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * @Author Rui
@@ -9,6 +10,7 @@ import lombok.Data;
  */
 @Data
 public class LoginRequest {
+    private Long userId;
     private String userName;
     private String password;
 }

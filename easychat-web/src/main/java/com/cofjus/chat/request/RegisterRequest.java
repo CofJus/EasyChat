@@ -1,8 +1,7 @@
 package com.cofjus.chat.request;
 
 import lombok.Data;
-
-import java.sql.Timestamp;
+import lombok.EqualsAndHashCode;
 
 /**
  * @Author Rui

@@ -24,7 +24,7 @@ public class RegisterController {
     @PostMapping("/register")
     public RegisterResponse register(@RequestBody RegisterRequest registerRequest) {
         User user = registerService.createUser(registerRequest.getUserName(), registerRequest.getPassword());
-        Long id = registerService.register(user);
-        return new RegisterResponse(registerRequest);
+        Long success = registerService.register(user);
+        return new RegisterResponse(user);
     }
 }
